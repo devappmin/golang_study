@@ -255,6 +255,12 @@ for key, value := range variable {
 }
 ```
 
+```go
+value, ok := variable["Hello"]
+```
+
+위와 같이 값을 잘 받아왔는지 ok를 통해서 받아올 수 있음.
+
 ## struct
 
 `C`나 `C++`처럼 `struct`를 사용하여 구조체를 생성할 수 있음.
