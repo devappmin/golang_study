@@ -198,3 +198,109 @@ switch koreanAge:= age + 2; koreanAge {
     // Put case here..
 }
 ```
+
+## Pointer
+
+기본적으로 C와 동일
+
+```go
+func pointerExample() {
+    a := 5
+    b := &a
+    fmt.Println(&a) // Address of a
+    fmt.Println(b)  // Same as &a
+    fmt.Println(*b) // point value of b
+}
+```
+
+## Array
+
+### 정적 할당 배열
+
+```go
+func arrayExample() {
+    // [length]type{init values}
+    names := [5]string{"hello", "world", ":)"}
+    names[3] = "sup"
+    names[4] = "have a nice day!"
+}
+```
+
+### Slices
+
+동적으로 크기를 변경하는 배열을 생성할 수도 있다.
+
+```go
+func slicesExample() {
+    // 정적 배열을 생성할 때에서 배열의 크기 부분만 없애면 됨.
+    names := []string{"hello", "world", ":)"}
+
+    // 값 추가는 append 함수를 사용해서 추가하면 됨.
+    names = append(names, "sup")
+}
+```
+
+## Map
+
+```go
+variable := map[string]string{"Hello": "World", "Nice": "day!"}
+// map[key]value{init values}
+```
+
+다른 언어들과 같이 `map`을 `for loop`에 돌릴 수 있음.
+
+```go
+for key, value := range variable {
+    fmt.Println(key, "is", value)
+}
+```
+
+## struct
+
+`C`나 `C++`처럼 `struct`를 사용하여 구조체를 생성할 수 있음.
+
+```json
+{
+  "name": "kim",
+  "age": 18
+}
+```
+
+위와 같이 value 부분에 dynamically하게 object가 들어가게 하는 방법은 `struct`를 사용하는 것.
+
+구조체에는 메소드를 생성할 수 있음.
+
+### 구조체 선언
+
+만드는 방식은 다른 언어들과 비슷하나 `,`를 추가해서는 안됨.
+
+```go
+type person struct {
+	name string
+	age int
+	favFood []string
+}
+```
+
+### 구조체 생성
+
+생성하는 것도 다른 언어랑 비슷하나 map과 같이 key값을 명시하여 출력하는 것을 선호.
+
+```go
+favFood := []string{"sushi", "kimbap", "ramen", "rice", "eggplant"}
+// 명확하지 않음.
+kim := person{"kim seung hwan", 26, favFood}
+
+// key 값을 명시해줌.
+kim := person{name:"kim seung hwan", age:26, favFood: favFood}
+
+// 전체 출력
+fmt.Println(kim)
+
+// 일부 출력
+fmt.Println(kim.name)
+```
+
+## After basic course.
+
+`go`에는 클래스가 없다.

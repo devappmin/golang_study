@@ -2,14 +2,18 @@ package main
 
 import "fmt"
 
-func canIDrink(age int) bool {
-	if koreanAge := age + 2; koreanAge < 18 {
-		return false
-	}
-
-	return true
+type person struct {
+	name    string
+	age     int
+	favFood []string
 }
 
 func main() {
-	fmt.Println(canIDrink(18))
+	favFood := []string{"sushi", "kimbap", "ramen", "rice", "eggplant"}
+	kim := person{
+		name:    "kim seung hwan",
+		age:     26,
+		favFood: favFood,
+	}
+	fmt.Println(kim)
 }
