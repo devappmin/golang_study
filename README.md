@@ -78,6 +78,14 @@ func main() {
 }
 ```
 
+똑같이 `...`을 통해서 여러 개의 값을 파라미터로 넣을 수 있다.
+
+```go
+hi := []string{"hello", "hi"}
+hello := []string{}
+hello = append(hello, hi...) // ...을 이용하여 여러개를 넣을 수 있음.
+```
+
 ### Naked return
 
 아래와 같이 리턴 값을 미리 정해둘 수 있다.
